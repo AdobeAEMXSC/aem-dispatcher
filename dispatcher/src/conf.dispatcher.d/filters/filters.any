@@ -14,3 +14,10 @@ $include "./default_filters.any"
 
 # Additional rule to deal with upper case extensions
 /1001 { /type "allow" /extension '(CSS|EOT|GIF|ICO|JPEG|JPG|JS|GIF|PDF|PNG|SVG|SWF|TTG|WOFF|WOFF2|HTML|MP4|MOB|M4V)' /path "/content/*" }  # disable this rule to allow mapped content only
+
+# This change allows for the screens embedded page component to work
+/0107 { /type “allow” /method “GET” /query “wcmmode=*” }
+
+# Allow the wecafe to work on a screens player
+/0108 { /type "allow" /extension '(rendition|renditions)' }
+/0109 { /type "allow" /url "/apps/*" }
